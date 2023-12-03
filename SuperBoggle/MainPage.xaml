@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SuperBoggle.MainPage"
+             BackgroundColor="#1E1E1E">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="20"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <!-- Tapping the text box should submit the word -->
+            <!--Make it less big-->
+            
+            <Grid RowDefinitions="*, 30" ColumnDefinitions="*,1">
+                <Label TextColor="White"
+                   HorizontalOptions="StartAndExpand"
+                   FontSize="40"
+                   Text="Boggle!">
+
+                </Label>
+                <Label x:Name="scoreLabel" 
+                   TextColor="White"
+                   HorizontalOptions="EndAndExpand"
+                   FontSize="40"
+                   Text="0">
+
+                </Label>
+
+                <Label Text="+ 150" 
+                       TextColor="White" 
+                       Grid.Row="1" 
+                       HorizontalOptions="End"
+                       x:Name="scoreIncrementerLabel">
+                    
+                </Label>
+
+            </Grid>
+
+
+            <Grid x:Name="grid" 
+                  RowDefinitions="55, 55, 55, 55, 55, 55" 
+                  ColumnDefinitions="55, 55, 55, 55, 55, 55"
+                  ColumnSpacing="5"
+                  RowSpacing="5"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Start">
+
+            </Grid>
+
+            <Border
+                BackgroundColor="#2E2E2E"
+                Margin="5">
+                <Label x:Name="Word" 
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Center" 
+                   HorizontalTextAlignment="End"
+                   FontSize="50"
+                   TextColor="White">
+                </Label>
+            </Border>
+
+
+            <Grid x:Name="buttons"
+                  ColumnDefinitions="*,*,*"
+                  RowDefinitions="*">
+                <Button Grid.Column="0" 
+                        Margin="5" 
+                        Text="🗑️"
+                        FontSize="30"
+                        x:Name="trash">
+                    
+                </Button>
+                <Button Grid.Column="1" 
+                        Margin="5" 
+                        Text="🔄️" 
+                        FontSize="30"
+                        x:Name="reset">
+
+                </Button>
+                <Button Grid.Column="2" 
+                        Margin="5" 
+                        Text="➡️" 
+                        FontSize="30"
+                        x:Name="submit">
+                    
+                </Button>
+            </Grid>
+
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
